@@ -24,6 +24,13 @@ describe('ООП', () => {
             assert.strictEqual(point.x, 1);
             assert.strictEqual(point.y, 0);
         });
+
+        it('Корректно работает вычисление расстояния от точки Point до начала координат', () => {
+            const point = new core.Point(3, 4);
+
+            let distance = 5;
+            assert.strictEqual(point.calculateDistanceFromStartingPoint(), distance);
+        });
     });
 
     describe('#Point3D', () => {
@@ -43,6 +50,13 @@ describe('ООП', () => {
             assert.strictEqual(point.z, -3);
         });
 
+        it('Корректно работает расчёт расстояния от точки Point3D до начала координат', () => {
+            const point = new core.Point3D(3, 4, 5);
+            let distance = Math.sqrt(point.x*point.x + point.y*point.y + point.z*point.z);
+
+            assert.strictEqual(point.calculateDistanceFromStartingPoint(), distance);
+        });
+
         it('Point3D имеет статический метод vectorLength', () => {
             const pointA = new core.Point3D(1, 2, -3);
             const pointB = new core.Point3D(1, -1, 1);
@@ -56,22 +70,80 @@ describe('ООП', () => {
     });
 
     describe('#Queue', () => {
-        it('проверка массивом', () => {
+        it('может создаться', () => {
             const queue = new core.Queue();
-            // TODO:
-            assert.strictEqual(true, true);
+
+            assert.strictEqual(!!queue, true);
+        });
+
+        it('есть возможность проверить длину очереди', () => {
+            const queue = new core.Queue();
+
+            assert.strictEqual('length' in queue, true);
+        });
+
+        it('может создаться пустой', () => {
+            const queue = new core.Queue();
+
+            assert.strictEqual(queue.length, 0);
+        });
+
+        it('проверка массивом', () => {
+            const queue = new core.Queue([]);
+            
+            assert.strictEqual(!!queue, true);
+            assert.strictEqual(queue?.length, 0);
         });
 
         it('проверка на пограничные случаи', () => {
-            const queue = new core.Queue();
-            // TODO:
-            assert.strictEqual(true, true);
+            const queue1 = new core.Queue([1]);
+            const queue2 = new core.Queue([1, 2]);
+            
+            assert.strictEqual(!!queue1, true);
+            assert.strictEqual(queue1?.length, 1);
+            assert.strictEqual(!!queue2, true);
+            assert.strictEqual(queue2?.length, 2);
         });
 
-        it('может создаться из массива', () => {
-            const queue = new core.Queue([1,2,3,5]);
-            // TODO:
-            assert.strictEqual(true, true);
+        it('корректно создаётся из массива (значения верно копируются)', () => {
+            let array = [1,2,3,5];
+            const queue = new core.Queue(array);
+
+            queueArray = queue.toArray();
+            for (let i = 0; i < array.length; i++) {
+                assert.deepStrictEqual(array[i], queueArray[i]);
+            }
         });
+
+        it('может быть создан из объекта', () => {
+            arrayObj = {
+                "1": 1,
+                "2": 5,
+                "3": 7,
+                "a": 9,
+            }
+
+            const queue = new core.Queue(arrayObj);
+            for (let key in arrayObj) {
+                assert.deepStrictEqual(arrayObj[key], queue.dequeue());
+            }
+        });
+
+        it('корректно добавляются элементы', () => {
+            const queue = new core.Queue();
+            queue.enqueue(1);
+            queue.enqueue(2);
+
+            assert.strictEqual(queue.length, 2);
+        })
+
+        it('корректно удаляются элементы', () => {
+            const queue = new core.Queue();
+            queue.enqueue(2);
+            queue.enqueue(3);
+
+            assert.strictEqual(queue.dequeue(), 2);
+            assert.strictEqual(queue.length, 1);
+        })
     });
 });
