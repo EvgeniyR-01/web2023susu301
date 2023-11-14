@@ -1,6 +1,469 @@
 @import './src/helper';
 @import './src/logo.less';
 
+:root {
+  --text-01: #000000cc;
+  --text-02: #0000008a;
+  --text-link: #336fee;
+  --base-01: #ffffff;
+  --base-02: #f6f7f8;
+  --base-03: #e5e5e5;
+  --base-04: #777777;
+  --base-05: #666666;
+  --base-06: #555555;
+  --base-07: #444444;
+  --base-08: #333333;
+  --primary: #ffdd2d;
+  --primary-hover: #fcc521;
+  --primary-active: #fab619;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+// Стили для текста
+
+.text {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-01);
+  padding: 0;
+  margin: 0;
+}
+
+.text.align-center {
+  text-align: center;
+}
+
+.text.align-right {
+  text-align: right;
+}
+
+.text.align-justify {
+  text-align: justify;
+}
+
+.nav-text {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-02);
+}
+
+.nav-text.selected {
+  color: var(--text-01);
+}
+
+.nav-text.href {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: right;
+  text-decoration: none;
+  color: var(--text-link);
+}
+
+.icon-text {
+  font-family: Roboto;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: var(--base-01);
+}
+
+h1.page-block-header {
+  font-family: Roboto;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 48px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+h2.features-item-header {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  align-self: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+// Стили для шапки
+
+.header {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--base-02);
+  width: 100%;
+  height: 104px;
+  box-sizing: border-box;
+}
+
+.header-main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+  height: 64px;
+  background: var(--base-01);
+}
+
+.header-main.content {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 1104px;
+  height: 64px;
+  padding: 0;
+  gap: 48px;
+  background: var(--base-01);
+}
+
+.header-main.content.left {
+  width: fit-content;
+}
+
+.header-main.content.right {
+  width: fit-content;
+}
+
+.nav {
+  display: flex;
+  list-style-type: none;
+  height: 64px;
+  gap: 24px;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  gap: 6px;
+}
+
+@media (max-width: 800px) {
+  .nav-item:not(.selected) {
+    display: none;
+  }
+}
+
+.nav-item.selected {
+  box-shadow: 0px -2px 0px 0px #666666 inset;
+}
+
+.nav-item:hover {
+  color: var(--text-01);
+  box-shadow: 0px -2px 0px 0px #666666 inset;
+}
+
+.login {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  height: 64px;
+  gap: 8px;
+}
+
+// Картинки
+
+.login-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.cap-academic,
+.doc {
+  display: flex;
+  align-self: flex-start;
+}
+
+// Кнопки
+
+button.tui-button {
+  width: 10em;
+  height: 4em;
+  padding: 16px, 36px, 16px, 36px;
+  border: 0;
+  border-radius: 8px;
+  gap: 16px;
+  background: var(--primary);
+}
+
+button.tui-button:hover {
+  width: 10em;
+  height: 4em;
+  padding: 16px, 36px, 16px, 36px;
+  border: 0;
+  border-radius: 8px;
+  gap: 8px;
+  background: var(--primary-hover);
+}
+
+button.tui-button:active {
+  width: 10em;
+  height: 4em;
+  padding: 16px, 36px, 16px, 36px;
+  border: 0;
+  border-radius: 8px;
+  gap: 8px;
+  background: var(--primary-active);
+}
+
+button.tui-button:focus {
+  width: 10em;
+  height: 4em;
+  padding: 16px, 36px, 16px, 36px;
+  border: 2px solid #3333337a;
+  border-radius: 8px;
+  gap: 8px;
+  background: var(--primary);
+}
+
+button.tui-button span {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+// Стили для наполнения страницы
+
+.content {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--base-02);
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.content-item {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.text-block {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 76px 224px 24px 224px;
+  gap: 24px;
+}
+
+div.features {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 40px 128px 40px 128px;
+  gap: 48px;
+}
+
+div.features-item {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1 1 0;
+  padding: 32px;
+  border-radius: 24px;
+  gap: 24px;
+}
+
+@media (max-width: 800px) {
+  div.features-item {
+    flex-basis: auto;
+  }
+}
+
+div.features-item.with-background {
+  background: white;
+  border-radius: 24px;
+}
+
+.for-image,
+div.for-image,
+div.features-item.for-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: fit-content;
+  height: fit-content;
+}
+
+div.icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -84px 0px 0px 0px;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--base-08);
+}
+
+ul.dash-list {
+  display: flex;
+  flex-flow: column wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 20px;
+  gap: 12px;
+}
+
+ul.dash-list > li {
+  position: relative;
+}
+
+ul.dash-list > li:before {
+  font-weight: 900;
+  content: '\2014';
+  position: absolute;
+  left: -20px;
+}
+
+footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 128px;
+  padding: 0px 128px 0px 128px;
+  margin-top: 192px;
+  background-color: var(--base-02);
+  box-sizing: border-box;
+}
+
+.rectangle {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 20px;
+  margin-bottom: -20px;
+  box-sizing: border-box;
+  background: #d8d8d800;
+  box-shadow: 0px -1px 0px 0px #e7e8ea inset;
+}
+
+// Уникальные стили для разных ID
+
+#default {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 128px 40px 128px;
+  gap: 64px;
+}
+
+#image-frontend {
+  width: 1104px;
+  height: 460px;
+}
+
+#features-item-image-about-course {
+  width: 720px;
+  height: 360px;
+  flex-basis: 50%;
+}
+
+#image-about-course {
+  min-width: 631px;
+  min-height: 304px;
+  width: 90%;
+  height: auto;
+}
+
+#dash-list-DesktopImagePlusText {
+  display: flex;
+  width: 341px;
+  height: fit-content;
+  margin: 48px 0px 0px 0px;
+}
+
+#step-1,
+#step-2,
+#step-3,
+#step-4 {
+  width: 240px;
+  margin-top: 28px;
+  padding: 56px 32px 32px 32px;
+  border-radius: 24px;
+  gap: 10px;
+}
+
+#text-block-default {
+  gap: 40px;
+}
+
+#text-block-default-no-button {
+  gap: 24px;
+}
+
+// #text-block-DesktopImagePlusText {}
+
+#text-block-vacancy-1,
+#text-block-vacancy-2,
+#text-block-vacancy-3 {
+  gap: 16px;
+}
+
+#card-no-buttons-1,
+#card-no-buttons-2 {
+  gap: 44px;
+}
+
+#text-block-card-text-links-1,
+#text-block-card-text-links-2,
+#text-block-card-no-buttons-1,
+#text-block-card-no-buttons-2 {
+  gap: 12px;
+}
+
+#text-block-step-1,
+#text-block-step-2,
+#text-block-step-3,
+#text-block-step-4 {
+  gap: 10px;
 }
