@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <title>TODO List</title>
+  </head>
+
+  <body>
+    <!-- Оверлей -->
+    <nav class="navbar navbar-expand-lg border-bottom z-1" id="horizontal-navbar">
+      <div class="container-fluid p-0 m-0" id="horizontal-navbar-container">
+        <div class="container-sm border-end" id="container-toggle-vertical-navbar-btn">
+          <button type="button" class="btn btn-primary" id="toggle-vertical-navbar-btn">Работа с задачами</button>
+        </div>
+        <a class="navbar-brand" id="page-title" href="#">TODO</a>
+        <button type="button" class="btn me-3" id="theme-toggle-btn"></button>
+      </div>
+    </nav>
+
+    <!-- Боковая панель -->
+    <nav class="navbar navbar-expand-lg border-end z-1" id="vertical-navbar">
+      <div class="container">
+        <form class="container-fluid">
+          <button type="button" class="btn btn-primary" id="add-task-btn" disabled>Добавить задачу</button>
+          <button type="button" class="btn btn-primary" id="edit-task-btn" disabled>Редактировать задачу</button>
+          <button type="button" class="btn btn-primary" id="remove-task-btn" disabled>Удалить задачу</button>
+          <button type="button" class="btn btn-danger" id="remove-all-tasks-btn" data-bs-toggle="modal" data-bs-target="#confirmation-modal" disabled>Удалить все задачи</button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Содержимое страницы -->
+    <div class="container-fluid overflow-auto" id="all-page-content">
+      <div class="container mt-4" id="main-content">
+        <div class="container-fluid border-bottom mb-4">
+          <h1 class="mb-4">Список дел</h1>
+        </div>
+
+        <div class="container-fluid d-flex flex-column gap-3">
+          <div class="d-flex justify-content-between mt-3" id="tasks-loader">
+            <strong>Загрузка...</strong>
+            <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+          </div>
+
+          <ul class="list-group sortable-ul" id="important-task-list">
+            <!-- Место для отображения важных задач -->
+          </ul>
+
+          <ul class="list-group sortable-ul" id="default-task-list">
+            <!-- Место для отображения задач -->
+          </ul>
+
+          <ul class="list-group sortable-ul" id="completed-task-list">
+            <!-- Место для отображения выполненных задач -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="./modals/task-modal/task-modal.js"></script>
+    <script src="./modals/confirmation-modal/confirmation-modal.js"></script>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

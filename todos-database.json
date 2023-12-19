@@ -1,0 +1,61 @@
+{
+  "todos": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "delectus aut autem",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "quis ut nam facilis et officia qui",
+      "description": null,
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "fugiat veniam minus",
+      "description": null,
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 4,
+      "title": "et porro tempora",
+      "completed": true
+    },
+    {
+      "userId": 10,
+      "id": 196,
+      "title": "consequuntur aut ut fugit similique",
+      "completed": true
+    },
+    {
+      "userId": 10,
+      "id": 197,
+      "title": "dignissimos quo nobis earum saepe",
+      "completed": true
+    },
+    {
+      "userId": 10,
+      "id": 198,
+      "title": "quis eius est sint explicabo",
+      "completed": true
+    },
+    {
+      "userId": 10,
+      "id": 199,
+      "title": "numquam repellendus a magnam",
+      "completed": true
+    },
+    {
+      "userId": 7,
+      "id": 10,
+      "title": "test",
+      "description": "test body of task!",
+      "completed": false
+    }
+  ]
+}
