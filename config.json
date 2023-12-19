@@ -1,0 +1,10 @@
+{
+  "settings": {
+    "numberOfUsers": 10,
+    "fetchUsersTarget": "https://jsonplaceholder.typicode.com/users",
+    "numberOfTasks": "all",
+    "fetchTasksTarget_jsonplaceholder": "https://jsonplaceholder.typicode.com/todos",
+    "fetchTasksTarget_jsonserver": "http://localhost:3000/todos",
+    "fetchTasksTarget": "https://jsonplaceholder.typicode.com/todos"
+  }
+}
