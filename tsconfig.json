@@ -1,0 +1,11 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "ES6",
+    "outDir": "js",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "removeComments": true
+  },
+  "files": ["./ts/task.ts", "ts/task-collection.ts", "./ts/usertasks.ts", "ts/data-menu.ts", "./ts/main.ts"]
+}
