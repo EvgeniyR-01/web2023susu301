@@ -1,0 +1,50 @@
+<div class="modal fade" id="task-modal" tabindex="-1" role="dialog" aria-labelledby="task-modal-label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form class="needs-validation" id="task-modal-form" novalidate>
+        <div class="modal-header">
+          <h5 class="modal-title" id="task-modal-label">Детали задачи</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <!-- <div class="mb-3">
+            <label for="task-modal-task-user-id" class="col-form-label">User ID</label>
+            <input type="text" pattern="^([1-9]|10){1}$" class="form-control" id="task-modal-task-user-id" autocomplete="off" required>
+            <div class="invalid-feedback">
+              Пожалуйста, введите User ID (от 1 до 10 включительно).
+            </div>
+          </div> -->
+          <div class="form-group mb-3">
+            <label for="user-select">Выбор пользователя:</label>
+            <select class="form-control" id="user-select"></select>
+          </div>
+
+          <div class="mb-3">
+            <label for="task-modal-task-title" class="col-form-label">Заголовок:</label>
+            <input type="text" class="form-control" id="task-modal-task-title" autocomplete="off" required />
+            <div class="invalid-feedback">Пожалуйста, введите заголовок для задачи.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="task-modal-task-description" class="col-form-label">Описание:</label>
+            <textarea type="text" class="form-control" id="task-modal-task-description" autocomplete="off" rows="6"></textarea>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="task-modal-task-is-important-checkbox" />
+            <label class="form-check-label" for="task-modal-task-is-important-checkbox">Задача важная</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="task-modal-task-is-completed-checkbox" />
+            <label class="form-check-label" for="task-modal-task-is-completed-checkbox">Задача выполнена</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn btn-primary" id="task-modal-save-btn">Сохранить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
